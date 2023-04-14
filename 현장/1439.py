@@ -15,7 +15,7 @@ if __name__ == "__main__":
         elif s[i] != s[i+1] and s[i] == "1":
             ones += 1
     
-    print(min(zeros, ones))
+    print(max(zeros, ones))
 
 
 
