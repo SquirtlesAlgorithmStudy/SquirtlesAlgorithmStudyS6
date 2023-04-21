@@ -5,7 +5,7 @@ input = sys.stdin.readline
 n = int(input())
 
 p = [list(map(int,input().split())) for _ in range(n)]
-p.sort() # 앞의 값 기준으로 정렬
+p.sort() 
 
 
 x, y = p[0]  
