@@ -2,12 +2,12 @@ import sys
 input = sys.stdin.readline
 
 s = input().rstrip()
-nowValue = -1
+now_value = -1
 count = 0
 
 for letter in s:
-    if int(letter) != nowValue:
+    if int(letter) != now_value:
         count += 1
-        nowValue = int(letter)
+        now_value = int(letter)
 
 print(count // 2)
