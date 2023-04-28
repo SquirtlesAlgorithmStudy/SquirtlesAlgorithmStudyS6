@@ -9,6 +9,6 @@ last = 0
 for coord in coords:
     if coord + 0.5 > last:
         answer += 1
-        last = coord - 0.5 + L
+        last = max(last, coord - 0.5 + L)
 
 print(answer)
