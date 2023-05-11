@@ -1,3 +1,4 @@
 import sys
 
-print(-sys.maxsize)
+li = ['a', 'zz','asdfasdf','sggsd','zzzzzzz']
+print(max(li))
