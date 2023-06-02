@@ -27,7 +27,7 @@ def bfs(x, y):
                 
 case_count = int(input().rstrip())    
         
-for case in range(case_count) :
+for case in range(case_count):  
     l = int(input().rstrip())
     s_x, s_y = map(int, input().rstrip().split())
     e_x, e_y = map(int, input().rstrip().split())

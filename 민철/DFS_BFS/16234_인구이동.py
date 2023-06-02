@@ -6,7 +6,6 @@ answer = 0
 for i in range(n):
     graph.append(list(map(int, input().split())))
 
-
 #상, 하, 좌, 우
 dx = [-1, 1, 0, 0]
 dy = [0, 0, -1, 1]
