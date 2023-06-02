@@ -5,15 +5,14 @@ input = sys.stdin.readline
 
 N, M, K, X = map(int,input().split())
 road_dic={}
-visited = set()
-answer = []
+visited = {X}
+answer = []      
 
 def bfs(node, cnt):
     que = deque([(node,cnt)])
+    
     while que:
         node, cnt = que.popleft()
-        visited.add(node)
-
         if node not in road_dic.keys():
             return
 
@@ -28,7 +27,7 @@ def bfs(node, cnt):
             elif n in road_dic.keys():
                 que.append((n, cnt+1))
                 visited.add(n)
-            
+
             else:
                 visited.add(n)
 
