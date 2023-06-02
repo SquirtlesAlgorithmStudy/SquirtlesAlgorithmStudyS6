@@ -4,7 +4,7 @@ input = sys.stdin.readline
 
 def bfs(x, y):
     dx = [-1, -2, -2, -1, 1, 2, 2, 1]
-    dy = [-2, -1, -1, -2, 2, 1, 1, 2]
+    dy = [-2, -1, 1, 2, 2, 1, -1, -2]
 
     queue = deque()
     queue.append((x, y))
@@ -14,7 +14,7 @@ def bfs(x, y):
         if x == e_x and y == e_y:
             return graph[x][y]
         
-        for i in range(len(dx)) :
+        for i in range(len(dx)):
             nx = x + dx[i]
             ny = y + dy[i]
         
