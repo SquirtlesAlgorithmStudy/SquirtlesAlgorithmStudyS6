@@ -17,7 +17,7 @@ def bfs(x, y):
         for i in range(len(dx)) :
             nx = x + dx[i]
             ny = y + dy[i]
-
+        
             if nx < 0 or nx >= l or ny < 0 or ny >= l:
                 continue
 

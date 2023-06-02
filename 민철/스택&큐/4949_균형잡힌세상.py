@@ -20,7 +20,7 @@ while True:
                 if bracket != '(':
                     answer = 'no'
                     break
-            else:
+            else: #s == ']'
                 if bracket != '[':
                     answer = 'no'
                     break
