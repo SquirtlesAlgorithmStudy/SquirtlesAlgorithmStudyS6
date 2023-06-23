@@ -10,9 +10,12 @@
 # for a, b in zipA, B:
 #     print(a, b)
 # print(A, B)
-from collections import deque
-n = 2
+a = set([1, 2])
+b = set([3, 4])
 
-cand = deque([(i,j) for i in range(n) for j in range(i%2,n,2)])
 
-print(cand)
+
+print(a, b)
+print(a+b)
+a.add(b)
+print(a)

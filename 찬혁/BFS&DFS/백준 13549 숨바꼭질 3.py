@@ -1,36 +1,26 @@
 import sys
 from collections import deque
 
-def bfs(N):
-    que = deque([(N,0)])
+N, K = map(int, input().split())  
+que = deque()
+que.append(N) 
+visited = [-1] * 100001
+visited[N] = 0
 
-    while que:
-        print(que)
-        subin, cnt = que.popleft()
-        move_subin = [subin*2,subin-1, subin+1]
-
-        for idx,m in enumerate(move_subin):
-            s_cnt = cnt
-            if m < 0 or m >= 100000 or m in visited:
-                continue
-            
-            if idx != 0:
-                s_cnt +=1
-
-            if m == K:
-                return s_cnt
-
-            que.append((m,s_cnt))
-            visited.add(m)
+while que:
+    loca = que.popleft()
+    if loca == K:
+        print(visited[loca])
+        break
+    
+    if 0 <= loca-1 < 100001 and visited[loca-1] == -1:
+        visited[loca-1] = visited[loca] + 1
+        que.append(loca-1)
+    if 0 < loca*2 < 100001 and visited[loca*2] == -1:
+        visited[loca*2] = visited[loca]
+        que.appendleft(loca*2)  
+    if 0 <= loca+1 < 100001 and visited[loca+1] == -1:
+        visited[loca+1] = visited[loca] + 1
+        que.append(loca+1)
 
 
-input = sys.stdin.readline
-
-N, K = map(int, input().split())
-
-visited = {N}
-
-if N == K:
-    print(0)
-else:
-    print(bfs(N))
