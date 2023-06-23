@@ -17,7 +17,6 @@ def solution(n, info):
         info_cnt = 0
         ryan_cnt = 0
         flag = True
-        print(com_r)
         s_com_r = set(com_r)
         for data in s_com_r:
             #조건에 안맞는 조합들 제거
@@ -32,24 +31,25 @@ def solution(n, info):
             elif info[data] >= com_r.count(data):
                 ryan_cnt += data
         
-        #어피치가 이기는 경우 제거
-        if info_score - info_cnt >= sum(s_com_r) - ryan_cnt:
+        #어피치가 이기는 경우, 조건  제거
+        if info_score - info_cnt >= sum(s_com_r) - ryan_cnt or flag == False:
             continue
-            
-        if flag == True and max < (sum(s_com_r) - ryan_cnt) - (info_score - info_cnt):
-            max = (sum(s_com_r) - ryan_cnt) - (info_score - info_cnt)
+        
+        s_score = (sum(s_com_r) - ryan_cnt) - (info_score - info_cnt)
+        
+        if max < s_score:
+            max = s_score
             max_tu = com_r 
             
         #최댓값이 같은 것 중에서 점수가 낮은 것을 가지는 것 max_tu 추가
-        if flag == True and max == (sum(s_com_r) - ryan_cnt) - (info_score - info_cnt):
+        if max == s_score:
             for i in score:
                 if max_tu.count(i) < com_r.count(i):
                     max_tu = com_r
                     break
 
                 elif max_tu.count(i) > com_r.count(i):
-                        
-                        break
+                    break
                 
     for score in max_tu:
         answer[score] += 1
@@ -60,4 +60,4 @@ def solution(n, info):
         return list(reversed(answer))
     
 
-#print(solution(5,	[2,1,1,1,0,0,0,0,0,0,0]))
+print(solution(5,	[2,1,1,1,0,0,0,0,0,0,0]))
