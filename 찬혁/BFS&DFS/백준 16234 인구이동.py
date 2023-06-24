@@ -29,7 +29,7 @@ def bfs(row, col):
         for row, col in union:
             board[row][col] = population//cnt
         
-        return 1, union
+        return 1, union 
     
     else:
         return 0, set()
