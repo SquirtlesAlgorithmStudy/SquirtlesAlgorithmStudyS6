@@ -1,6 +1,7 @@
 import sys
 from collections import deque
 
+
 def bfs(N):
     que = deque([(N,0)])
 
